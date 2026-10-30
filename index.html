@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ViuTravel | Discover More. Travel Better.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --navy: #102d46;
+    --blue: #176b87;
+    --orange: #e9a34b;
+    --light: #f6f8f9;
+    --white: #ffffff;
+    --text: #263746;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* HEADER */
+
+header {
+    width: 100%;
+    height: 82px;
+    padding: 0 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 29px;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--orange);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    font-size: 14px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--orange);
+}
+
+.nav-btn {
+    background: var(--navy);
+    color: white;
+    padding: 13px 23px;
+    border-radius: 5px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 25px;
+    border: none;
+    background: none;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 620px;
+    background:
+    linear-gradient(90deg, rgba(8,30,47,.78), rgba(8,30,47,.12)),
+    url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=90');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+    color: white;
+}
+
+.hero-content {
+    max-width: 680px;
+}
+
+.hero-tag {
+    color: var(--orange);
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 6vw, 70px);
+    line-height: 1.12;
+    margin-bottom: 22px;
+}
+
+.hero p {
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 530px;
+    margin-bottom: 30px;
+}
+
+.primary-btn {
+    display: inline-block;
+    background: var(--orange);
+    color: var(--navy);
+    padding: 15px 28px;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: .3s;
+}
+
+.primary-btn:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+/* BOOKING */
+
+.booking-section {
+    padding: 0 7%;
+    margin-top: -55px;
+    position: relative;
+    z-index: 5;
+}
+
+.booking-box {
+    background: white;
+    border-radius: 9px;
+    padding: 30px;
+    box-shadow: 0 12px 40px rgba(0,0,0,.12);
+}
+
+.booking-tabs {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+}
+
+.booking-tab {
+    border: none;
+    background: none;
+    padding: 0 0 14px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #777;
+}
+
+.booking-tab.active {
+    color: var(--blue);
+    border-bottom: 3px solid var(--orange);
+}
+
+.booking-form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) auto;
+    gap: 14px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.field label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #697986;
+}
+
+.field input,
+.field select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #e3e8eb;
+    border-radius: 5px;
+    background: #fafafa;
+    font-family: inherit;
+    color: var(--navy);
+    outline-color: var(--blue);
+}
+
+.search-btn {
+    align-self: end;
+    padding: 15px 25px;
+    border: none;
+    background: var(--navy);
+    color: white;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+/* GENERAL SECTIONS */
+
+section.content-section {
+    padding: 90px 7%;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 35px;
+}
+
+.section-label {
+    color: var(--orange);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--navy);
+    font-size: 38px;
+}
+
+.section-heading p {
+    color: #7a8790;
+    margin-top: 10px;
+    line-height: 1.7;
+}
+
+.view-all {
+    color: var(--blue);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* DESTINATIONS */
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.destination-card {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 8px;
+    color: white;
+}
+
+.destination-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.destination-card:hover img {
+    transform: scale(1.08);
+}
+
+.destination-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent 35%, rgba(0,0,0,.75));
+}
+
+.destination-info {
+    position: absolute;
+    bottom: 25px;
+    left: 22px;
+    z-index: 2;
+}
+
+.destination-info h3 {
+    font-size: 23px;
+    margin-bottom: 5px;
+}
+
+.destination-info p {
+    font-size: 13px;
+}
+
+/* PACKAGES */
+
+.packages {
+    background: var(--light);
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.package-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,.05);
+    transition: .3s;
+}
+
+.package-card:hover {
+    transform: translateY(-6px);
+}
+
+.package-card img {
+    width: 100%;
+    height: 235px;
+    object-fit: cover;
+}
+
+.package-details {
+    padding: 23px;
+}
+
+.package-details small {
+    color: var(--blue);
+    font-weight: 700;
+}
+
+.package-details h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--navy);
+    font-size: 23px;
+    margin: 12px 0;
+}
+
+.package-details p {
+    font-size: 14px;
+    color: #7b8790;
+    line-height: 1.7;
+}
+
+.package-bottom {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.package-bottom strong {
+    color: var(--navy);
+    font-size: 18px;
+}
+
+.package-bottom a {
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* EXPERIENCE */
+
+.experience {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.experience img {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.experience-content h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--navy);
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.experience-content p {
+    line-height: 1.9;
+    color: #78848c;
+    margin-bottom: 25px;
+}
+
+.experience-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.experience-list div {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--navy);
+}
+
+/* PROMO */
+
+.promo {
+    padding: 75px 8%;
+    background:
+    linear-gradient(rgba(12,37,56,.83), rgba(12,37,56,.83)),
+    url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=85');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+}
+
+.promo h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    margin-bottom: 17px;
+}
+
+.promo p {
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+/* TESTIMONIALS */
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.testimonial {
+    background: var(--light);
+    padding: 28px;
+    border-radius: 7px;
+}
+
+.stars {
+    color: var(--orange);
+    margin-bottom: 15px;
+}
+
+.testimonial p {
+    color: #66747e;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.testimonial h4 {
+    margin-top: 20px;
+    color: var(--navy);
+}
+
+/* FOOTER */
+
+footer {
+    background: #10283c;
+    color: white;
+    padding: 65px 7% 25px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 45px;
+}
+
+.footer-logo {
+    font-size: 29px;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.footer-logo span {
+    color: var(--orange);
+}
+
+.footer-about {
+    color: #b7c5cf;
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 300px;
+}
+
+footer h4 {
+    margin-bottom: 20px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer li {
+    margin-bottom: 13px;
+    color: #b7c5cf;
+    font-size: 14px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.15);
+    padding-top: 23px;
+    text-align: center;
+    color: #a9b8c2;
+    font-size: 13px;
+}
+
+/* MOBILE */
+
+@media(max-width: 950px) {
+
+    nav {
+        gap: 15px;
+    }
+
+    .booking-form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .destination-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .experience {
+        gap: 30px;
+    }
+}
+
+@media(max-width: 700px) {
+
+    header {
+        height: 72px;
+        padding: 0 5%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 25px;
+        flex-direction: column;
+        align-items: flex-start;
+        box-shadow: 0 10px 15px rgba(0,0,0,.08);
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    .hero {
+        min-height: 570px;
+        padding: 50px 6%;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .booking-section {
+        padding: 0 5%;
+        margin-top: -35px;
+    }
+
+    .booking-box {
+        padding: 20px;
+    }
+
+    .booking-form {
+        grid-template-columns: 1fr;
+    }
+
+    section.content-section {
+        padding: 65px 5%;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .view-all {
+        display: inline-block;
+        margin-top: 17px;
+    }
+
+    .destination-grid,
+    .package-grid,
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .destination-card {
+        height: 330px;
+    }
+
+    .experience {
+        grid-template-columns: 1fr;
+    }
+
+    .experience img {
+        height: 300px;
+    }
+
+    .experience-content h2 {
+        font-size: 34px;
+    }
+
+    .promo h2 {
+        font-size: 33px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 400px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="#" class="logo">viu<span>travel</span></a>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+    <nav id="navigation">
+        <a href="#">Home</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#packages">Holiday Packages</a>
+        <a href="#experiences">Experiences</a>
+        <a href="#contact">Contact</a>
+        <a href="#booking" class="nav-btn">Plan Your Trip</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-tag">DISCOVER THE WORLD WITH VIUTRAVEL</div>
+
+        <h1>Every journey begins with a beautiful destination.</h1>
+
+        <p>
+            From unforgettable African safaris to beautiful tropical escapes,
+            discover experiences that turn ordinary holidays into extraordinary memories.
+        </p>
+
+        <a href="#destinations" class="primary-btn">Explore Destinations →</a>
+
+    </div>
+
+</section>
+
+<!-- BOOKING -->
+
+<section class="booking-section" id="booking">
+
+    <div class="booking-box">
+
+        <div class="booking-tabs">
+            <button class="booking-tab active" onclick="changeTab('flights',this)">✈ Flights</button>
+            <button class="booking-tab" onclick="changeTab('hotels',this)">▣ Hotels</button>
+            <button class="booking-tab" onclick="changeTab('holidays',this)">☀ Holidays</button>
+        </div>
+
+        <form class="booking-form" id="bookingForm">
+
+            <div class="field">
+                <label id="label1">FROM</label>
+                <input type="text" id="field1" placeholder="Nairobi">
+            </div>
+
+            <div class="field">
+                <label id="label2">TO</label>
+                <input type="text" id="field2" placeholder="Destination">
+            </div>
+
+            <div class="field">
+                <label>TRAVEL DATE</label>
+                <input type="date" id="travelDate">
+            </div>
+
+            <div class="field">
+                <label>TRAVELLERS</label>
+                <select id="travellers">
+                    <option>1 Traveller</option>
+                    <option>2 Travellers</option>
+                    <option>3 Travellers</option>
+                    <option>4 Travellers</option>
+                    <option>5+ Travellers</option>
+                </select>
+            </div>
+
+            <button type="submit" class="search-btn">Search →</button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- DESTINATIONS -->
+
+<section class="content-section" id="destinations">
+
+    <div class="section-heading">
+        <div>
+            <div class="section-label">EXPLORE THE WORLD</div>
+            <h2>Popular Destinations</h2>
+            <p>Discover places worth travelling for.</p>
+        </div>
+
+        <a href="#packages" class="view-all">Explore all destinations →</a>
+    </div>
+
+    <div class="destination-grid">
+
+        <a href="#packages" class="destination-card">
+            <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=700&q=85" alt="African safari">
+            <div class="destination-info">
+                <h3>Maasai Mara</h3>
+                <p>Kenya · Wildlife Safari</p>
+            </div>
+        </a>
+
+        <a href="#packages" class="destination-card">
+            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=700&q=85" alt="Tropical beach">
+            <div class="destination-info">
+                <h3>Diani Beach</h3>
+                <p>Kenya · Beach Escape</p>
+            </div>
+        </a>
+
+        <a href="#packages" class="destination-card">
+            <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=700&q=85" alt="Santorini">
+            <div class="destination-info">
+                <h3>Santorini</h3>
+                <p>Greece · Island Holiday</p>
+            </div>
+        </a>
+
+        <a href="#packages" class="destination-card">
+            <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=700&q=85" alt="Maldives">
+            <div class="destination-info">
+                <h3>Maldives</h3>
+                <p>Indian Ocean · Luxury Escape</p>
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- HOLIDAY PACKAGES -->
+
+<section class="content-section packages" id="packages">
+
+    <div class="section-heading">
+        <div>
+            <div class="section-label">HANDPICKED FOR YOU</div>
+            <h2>Featured Holiday Packages</h2>
+            <p>Exceptional experiences, thoughtfully planned.</p>
+        </div>
+        <a href="#contact" class="view-all">View all packages →</a>
+    </div>
+
+    <div class="package-grid">
+
+        <article class="package-card">
+
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=85" alt="Zanzibar beach">
+
+            <div class="package-details">
+                <small>BEACH HOLIDAY · 4 DAYS</small>
+                <h3>Zanzibar Escape</h3>
+                <p>Experience beautiful beaches, turquoise waters and unforgettable island adventures.</p>
+
+                <div class="package-bottom">
+                    <strong>Explore package</strong>
+                    <a href="#contact">Discover →</a>
+                </div>
+            </div>
+
+        </article>
+
+        <article class="package-card">
+
+            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=85" alt="Safari">
+
+            <div class="package-details">
+                <small>SAFARI · 3 DAYS</small>
+                <h3>Masai Mara Adventure</h3>
+                <p>Discover Kenya's magnificent wildlife and experience the beauty of the African wilderness.</p>
+
+                <div class="package-bottom">
+                    <strong>Explore package</strong>
+                    <a href="#contact">Discover →</a>
+                </div>
+            </div>
+
+        </article>
+
+        <article class="package-card">
+
+            <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=85" alt="Maldives holiday">
+
+            <div class="package-details">
+                <small>LUXURY ESCAPE · 5 DAYS</small>
+                <h3>Maldives Experience</h3>
+                <p>Enjoy a tropical paradise with breathtaking ocean views and beautiful island resorts.</p>
+
+                <div class="package-bottom">
+                    <strong>Explore package</strong>
+                    <a href="#contact">Discover →</a>
+                </div>
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- EXPERIENCES -->
+
+<section class="content-section" id="experiences">
+
+    <div class="experience">
+
+        <img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1000&q=85" alt="Nature travel experience">
+
+        <div class="experience-content">
+
+            <div class="section-label">THE VIUTRAVEL EXPERIENCE</div>
+
+            <h2>Travel further. Experience more.</h2>
+
+            <p>
+                Every traveller deserves an experience worth remembering.
+                Whether you are planning a relaxing holiday, a family adventure,
+                a romantic getaway or an international journey, we help make
+                every detail count.
+            </p>
+
+            <div class="experience-list">
+                <div>✓ Personalised Travel</div>
+                <div>✓ Carefully Selected Stays</div>
+                <div>✓ Memorable Experiences</div>
+                <div>✓ Dedicated Assistance</div>
+            </div>
+
+            <a href="#contact" class="primary-btn">Plan Your Journey</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROMOTION -->
+
+<section class="promo">
+
+    <div class="section-label">YOUR NEXT ADVENTURE AWAITS</div>
+
+    <h2>Let's make your next trip unforgettable.</h2>
+
+    <p>
+        Tell us where you dream of going.
+        We'll help you turn that dream into a journey.
+    </p>
+
+    <a href="#contact" class="primary-btn">Start Planning Today →</a>
+
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section class="content-section">
+
+    <div class="section-heading">
+        <div>
+            <div class="section-label">TRAVELLER STORIES</div>
+            <h2>Experiences That Matter</h2>
+            <p>Travel memories are meant to last.</p>
+        </div>
+    </div>
+
+    <div class="testimonial-grid">
+
+        <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>"An amazing travel experience. The entire journey was smooth and beautifully organised."</p>
+            <h4>Traveller Experience</h4>
+        </div>
+
+        <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>"The destination was beautiful and everything came together perfectly."</p>
+            <h4>Traveller Experience</h4>
+        </div>
+
+        <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>"A wonderful holiday experience. Looking forward to planning another adventure."</p>
+            <h4>Traveller Experience</h4>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+    <div class="footer-grid">
+
+        <div>
+            <div class="footer-logo">viu<span>travel</span></div>
+
+            <p class="footer-about">
+                Discover more of the world with ViuTravel.
+                Your journey to unforgettable experiences begins here.
+            </p>
+        </div>
+
+        <div>
+            <h4>Explore</h4>
+            <ul>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#packages">Holiday Packages</a></li>
+                <li><a href="#experiences">Experiences</a></li>
+                <li><a href="#booking">Book a Trip</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4>Travel</h4>
+            <ul>
+                <li>Flights</li>
+                <li>Hotels</li>
+                <li>Safaris</li>
+                <li>Beach Holidays</li>
+            </ul>
+        </div>
+
+        <div>
+            <h4>Contact</h4>
+            <ul>
+                <li>Nairobi, Kenya</li>
+                <li>Travel enquiries</li>
+                <li>Customer assistance</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 ViuTravel. All rights reserved.
+    </div>
+
+</footer>
+
+<script>
+
+function toggleMenu() {
+    document.getElementById('navigation').classList.toggle('show');
+}
+
+function changeTab(type, button) {
+
+    document.querySelectorAll('.booking-tab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+
+    button.classList.add('active');
+
+    const form = document.getElementById('bookingForm');
+    const label1 = document.getElementById('label1');
+    const label2 = document.getElementById('label2');
+    const field1 = document.getElementById('field1');
+    const field2 = document.getElementById('field2');
+
+    if (type === 'flights') {
+        label1.textContent = 'FROM';
+        label2.textContent = 'TO';
+        field1.placeholder = 'Nairobi';
+        field2.placeholder = 'Destination';
+    }
+
+    if (type === 'hotels') {
+        label1.textContent = 'DESTINATION';
+        label2.textContent = 'ROOM TYPE';
+        field1.placeholder = 'Where are you going?';
+        field2.placeholder = 'Standard / Deluxe';
+    }
+
+    if (type === 'holidays') {
+        label1.textContent = 'DESTINATION';
+        label2.textContent = 'HOLIDAY TYPE';
+        field1.placeholder = 'Where do you want to go?';
+        field2.placeholder = 'Beach / Safari / Luxury';
+    }
+}
+
+document.getElementById('bookingForm').addEventListener('submit', function(e) {
+
+    e.preventDefault();
+
+    const destination = document.getElementById('field2').value.trim();
+
+    if (!destination) {
+        alert('Please enter your destination or booking preference.');
+        return;
+    }
+
+    alert('Thank you for your interest in ViuTravel! Our booking search system will be connected in the next development stage.');
+
+});
+
+</script>
+
+</body>
+</html>
